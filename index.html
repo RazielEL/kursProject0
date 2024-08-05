@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<style>
+		
+	input[type="submit"], input[type="button"] {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: center;
+}
+		</style>
+		
+		    <script>
+        function performLuckySearch(event) {
+            event.preventDefault(); // Prevents the form from submitting
+            var query = document.getElementById('searchQuery').value;
+            if (query.trim() !== '') {
+                window.location.href = 'https://www.google.com/search?btnI=1&q=' + encodeURIComponent(query);
+            } else if (query.trim() ==''){
+				window.location.href= 'https://doodles.google';
+			}
+        }
+    </script>
+		
+    </head>
+	
+    <body>
+	
+	 <div id= "link">
+	 
+        <a href="imageSearch.html">Images</a>
+        <a href="advanceSearch.html">Advanced</a>
+		
+    </div>
+	
+	<div id = "mainContainer">
+	
+		<div id = "logo">
+			<img src="logo.png" alt="Gugle Logo Here" width="300">
+		</div>
+		
+	 
+	 
+		<div id = "mainSearch">
+		
+		<form id="searchForm" action="https://www.google.com/search">
+			<div class="input-container">
+				<input type="text" id="searchQuery" name="q" placeholder="Search....">
+			</div>
+			<div class="button-container">
+				<input type="submit" value="Google Search">
+				<input type="button" value="I'm Feeling Lucky" onclick="performLuckySearch(event);">
+			</div>
+			
+			
+			
+			
+		</form>	
+		</div>
+		
+	
+	</div>
+	   
+
+	   
+	 
+    </body>
+</html>

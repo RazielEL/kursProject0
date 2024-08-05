@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advance Search</title>
+	<link rel="stylesheet" type="text/css" href="advanceSearchStyles.css">
+	<script>
+		function performSearch() {
+		  const allWords = document.getElementById('allWords').value;
+		  const exactPhrase = document.getElementById('exactPhrase').value;
+		  const anyWords = document.getElementById('anyWords').value;
+		  const noneWords = document.getElementById('noneWords').value;
+
+		  let query = '';
+
+		  if (allWords) {
+			query += allWords.split(' ').join(' ') + ' ';
+		  }
+
+		  if (exactPhrase) {
+			query += `"${exactPhrase}" `;
+		  }
+
+		  if (anyWords) {
+			query += anyWords.split(' ').join(' OR ') + ' ';
+		  }
+
+		  if (noneWords) {
+			query += noneWords.split(' ').map(word => `-${word}`).join(' ') + ' ';
+		  }
+
+		  const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(query.trim())}`;
+		  window.location.href = googleSearchURL;
+    }
+	</script>
+	
+</head>
+<body>
+    <div class="header">
+        <img src="googlepng.png" alt="Google Small Logo">
+        <h1>Advanced Search</h1>
+    </div>
+	
+	
+	 <div id= "link">
+        <a href="index.html">Search</a>  
+    </div>
+	
+    <div class="divider"></div>
+	
+	<div id="titlesContainer"> 
+		<div class="titleForms">Find pages with...</div>
+		<div class="descriptionForms"> To do this in the search box </div>
+	</div>
+	
+	
+    <div class="content">
+	
+        <div class="left">
+            <form id="searchForm" onsubmit="performSearch(); return false;">
+                <div class="form-group">
+                    <label for="allWords">all these words:</label>
+                    <input type="text" id="allWords" name="allWords">
+                </div>
+                <div class="form-group">
+                    <label for="exactPhrase">this exact word or phrase:</label>
+                    <input type="text" id="exactPhrase" name="exactPhrase">
+                </div>
+                <div class="form-group">
+                    <label for="anyWords">any of these words:</label>
+                    <input type="text" id="anyWords" name="anyWords">
+                </div>
+                <div class="form-group">
+                    <label for="noneWords">none of these words:</label>
+                    <input type="text" id="noneWords" name="noneWords">
+                </div>
+				
+				
+                <input id="submitButton" type="submit" value="Google Search">
+				
+            </form>
+        </div>
+		
+        <div class="right">
+            <p>Type important words: tricolor rat terrier</p>
+            <p>Put exact words in quotes: "rat terrier"</p>
+            <p>Type OR between all the words you want: miniature OR standard</p>
+            <p>Put a minus sign just before words you don't want: -rodent, -"Jack Russell"</p>
+        </div>
+		
+    </div>
+</body>
+</html>

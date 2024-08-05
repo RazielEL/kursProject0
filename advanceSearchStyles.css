@@ -1,0 +1,116 @@
+		body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: flex-start;
+        }
+        .header img {
+            width: 75px; /* Adjust the size as needed */
+            height: auto;
+			margin-top: 20px;
+			margin-left: 20px;
+        }
+        .header h1 {
+            color: red;
+            font-size: 20px; /* Adjusted size */
+            margin-left: -50px;
+            margin-top: 85px; /* Adjust the top margin as needed */
+		
+        }
+        .divider {
+            border-top: 1px solid grey;
+            margin: 20px 0;
+        }
+		#titlesContainer{
+			display: flex;
+			justify-content: space-between; /* Distributes space between the text blocks */
+			align-items: center; /* Centers text vertically within the container */
+			padding: 10px; /* Optional: add some padding around the container */
+		}
+	
+		.titleForms {
+			display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+			margin-top: 40px;
+			margin-left: 50px;
+			font-size: 20px;
+		}
+		.descriptionForms {
+			display: flex;
+            align-items: right;
+            margin-bottom: 20px;
+			margin-top: 40px;
+			margin-right: 700px;
+			font-size: 20px;
+		}
+        .content {
+            display: flex;
+            justify-content: space-between;
+			align-items: center; /* Centers text vertically within the container */
+			padding: 10px; /* Optional: add some padding around the container */
+
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+			margin-left: 50px;
+        }
+        .form-group label {
+            width: 200px; /* Adjust the width as needed */
+            margin-right: 10px;
+			margin-top: 20px;
+			margin-bottom: 15px;
+			display: flex;
+			align-items: top;
+		
+        }
+        .form-group input[type="text"] {
+            width: 600px; /* Adjust the width as needed */
+            padding: 8px;
+            box-sizing: border-box;
+			align-items: center;
+        }
+		.left {
+			display: flex;
+			flex-direction: column;
+		}
+        .right p{
+			display: flex;
+			flex-direction: column;
+            width: 600px; /* Adjust the width as needed */
+            margin-right: 340px;
+			padding: 8px;
+			margin-bottom: 30px;
+		}
+		.right {
+			margin-bottom: 50px;
+		}
+		
+		#submitButton {
+			width: 110px; 
+			font-size: 12px;
+			padding: 10px;
+			background-color: #4c8cfc;
+			font-weight: bold;
+			color: white;
+			margin-left: 750px;
+			margin-top: 20px;
+			border: none;
+		
+		}
+		
+		#link {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			display: flex;
+			flex-direction: row;
+		}
+		
+		#link a {
+			text-decoration: none;
+			color: black;
+		}
